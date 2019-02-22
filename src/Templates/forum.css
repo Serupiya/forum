@@ -1,0 +1,44 @@
+.verificationError{
+    font-style: italic;
+    color:red;
+    font-size: smaller;
+}
+
+.postHeader{
+    background-color:lightblue;
+    padding: 0.5em 0.5em 0.5em 1em;
+
+}
+
+.postMessage{
+    border: solid lightblue;
+    padding: 0.2em;
+    margin-bottom: 0.5em;
+}
+
+.main-content{
+    border: solid lightblue;
+    border-width: 0 1px 1px 1px;
+    background-color: #fbffff;
+    padding-bottom: 1em;
+
+}
+
+.pageHeader{
+    padding-bottom: 1em;
+    border:solid lightblue;
+    border-width: 0 0 1em 0;
+    margin-bottom: 1em;
+}
+
+.separator{
+    border:solid lightblue;
+    border-width: 0 0 1em 0;
+    margin-bottom: 1em;
+}
+
+body {
+    background: url(
+    data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAYElEQVQoU2O8+Oz/f30pRkYGKADxQUx0MbgCqDpjBgaGs1jYDMgKkRXBLICLwRSimwRSiGIyI5objS8++38G6kYTmGKQGuIV4vAEptUwVzMwMBDlGQxfomtEdyMDrgAHACrNPt+XgAeHAAAAAElFTkSuQmCC
+    ) repeat;
+}

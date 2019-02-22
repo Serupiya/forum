@@ -1,0 +1,30 @@
+{
+  "name": "test/forum",
+  "description": "description_text",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "author's name",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload": {
+    "psr-4" : {
+      "Forum\\": "src"
+    }
+  },
+  "config": {
+
+    "platform": {
+
+      "php": "7.1.3"
+
+    }
+
+  },
+  "require": {
+    "twig/twig": "^2.0",
+    "ext-pdo": "*"
+  }
+}

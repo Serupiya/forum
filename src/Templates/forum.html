@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="src/Templates/bootstrap.min.css" rel="stylesheet">
+    <link href="src/Templates/forum.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Forum</title>
+
+</head>
+    <body>
+    <div class=" d-flex justify-content-center">
+        <div class="container pt-lg-4 main-content ">
+            <form class="mb-4" method="post" name="index">
+                <div class="pageHeader">
+                    <h1 class="d-flex justify-content-center ">FORUM</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label for="username">Username</label>
+                        <input class="form-control" name="username" id="username" required maxlength="45">
+                        {% if data.validationErrors.username %}
+                            <div class="verificationError">{{data.validationErrors.username}}</div>
+                        {% endif %}
+                    </div>
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-5">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="form-control" id="email" required maxlength="45">
+                        {% if data.validationErrors.email %}
+                            <div class="verificationError">{{data.validationErrors.email}}</div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-lg-12">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" rows="5" maxlength=1000 name="message" id="message" required> </textarea>
+                        {% if data.validationErrors.message %}
+                            <div class="verificationError">{{data.validationErrors.message}}</div>
+                        {% endif %}
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-1">Submit</button>
+            </form>
+
+            {% for post in data.posts %}
+            <div class="post">
+                <div class="postHeader">
+                    <div class="row">
+                        <div class="col-lg-3"> {{post.username}} </div>
+                        <div class="col-lg-3"> {{post.email}} </div>
+                        <div class="col-lg-2"> ({{post.emailPostCount}} Post{% if post.emailPostCount > 1 %}s{% endif %})</div>
+                        <div class="col-lg-4"> {{post.date}}</div>
+                    </div>
+                </div>
+                <div class="postMessage">
+                    <div class="row ">
+                        <div class="col-lg-12"> {{post.message|nl2br}}</div>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    </body>
+
+</html>
